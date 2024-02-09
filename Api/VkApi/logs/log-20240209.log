@@ -1,0 +1,45 @@
+2024-02-09 21:32:33.849 [INF] App server is starting.
+2024-02-09 21:33:02.662 [INF] LogErrorHandlerMiddleware.Invoke
+2024-02-09 21:33:02.664 [INF] HeartBeat
+2024-02-09 21:33:02.666 [INF] LogRequestLoggingMiddleware.Invoke
+2024-02-09 21:33:03.386 [WRN] The 'bool' property 'IsActive' on entity type 'Address' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-02-09 21:33:03.389 [WRN] The 'bool' property 'IsActive' on entity type 'Order' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-02-09 21:33:03.390 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-02-09 21:33:03.394 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-02-09 21:33:04.292 [INF] -------------Request-Begin------------
+2024-02-09 21:33:04.292 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:50000 
+Path: /vk/api/v1/Token 
+QueryString:  
+Request Body: {"email":"user@gmail.com","password":"admin"}
+2024-02-09 21:33:04.294 [INF] 
+
+2024-02-09 21:33:04.295 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:50000 
+Path: /vk/api/v1/Token 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2024-02-09T21:38:04.2783155+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjQiLCJSb2xlIjoidXNlciIsIkVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJ1c2VyIiwiRnVsbE5hbWUiOiJ1c2VyIHVzZXIiLCJleHAiOjE3MDc1MjE1ODQsImlzcyI6IlZrQXBpIiwiYXVkIjoiVmtBcGkifQ.qf_h14GBOidgsXCLh-coZS77DFHWQWcBZEiY0Ip67Aw","email":"user@gmail.com","fullName":"user user","id":4,"role":"user"}}
+2024-02-09 21:33:04.296 [INF] -------------Request-End------------
+2024-02-09 23:25:14.966 [INF] LogErrorHandlerMiddleware.Invoke
+2024-02-09 23:25:14.966 [INF] HeartBeat
+2024-02-09 23:25:14.967 [INF] LogRequestLoggingMiddleware.Invoke
+2024-02-09 23:25:15.024 [INF] -------------Request-Begin------------
+2024-02-09 23:25:15.025 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:50000 
+Path: /vk/api/v1/Token 
+QueryString:  
+Request Body: {"email":"admin@gmail.com","password":"admin"}
+2024-02-09 23:25:15.026 [INF] 
+
+2024-02-09 23:25:15.027 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:50000 
+Path: /vk/api/v1/Token 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2024-02-09T23:30:15.0235349+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjEiLCJSb2xlIjoiYWRtaW4iLCJFbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiRnVsbE5hbWUiOiJBZG1pbiIsImV4cCI6MTcwNzUyODMxNSwiaXNzIjoiVmtBcGkiLCJhdWQiOiJWa0FwaSJ9.mMHXQUAv40BZA7cSg1zZ8QJODGPjld5b5QvLbE9MQbY","email":"admin@gmail.com","fullName":"Admin","id":1,"role":"admin"}}
+2024-02-09 23:25:15.028 [INF] -------------Request-End------------

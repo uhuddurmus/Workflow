@@ -11,7 +11,7 @@ import AdminComponent from "./components/AdminComponent";
 import { useSelector } from "react-redux";
 import { selectIsAuthenticated } from "./redux/authSlice";
 import { selectIsAdmin } from "./redux/authSlice";
-import List from "./components/List";
+import List from "./components/List/List";
 
 function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser, logoutUser, selectIsAdmin } from "../redux/authSlice";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import List from "./List";
 const UserComponent = () => {
   const user = useSelector(selectUser);
   const isAdmin = useSelector(selectIsAdmin);
@@ -17,6 +16,19 @@ const UserComponent = () => {
   const handleGoAdmin = () => {
     navigate("/admin"); // You can redirect to the login page or perform any other actions after logout
   };
+  const handleGoList = () => {
+    navigate("/list");
+  };
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div style={{ backgroundColor: "#040c18" }}>
       <ToastContainer />
@@ -67,8 +79,8 @@ const UserComponent = () => {
               </button>
             </div>
           </div>
-          <div className="col-md-6  p-5 my-auto ">
-            <div className="container mt-1 bg-secondary bg-opacity-50 rounded p-5">
+          <div className="col-md-6 p-5 my-auto d-flex flex-column align-items-center">
+            <div className="container bg-secondary bg-opacity-50 rounded p-5">
               <svg
                 preserveAspectRatio="xMidYMid meet"
                 data-bbox="0 0 585.42 153.21"
@@ -125,6 +137,31 @@ const UserComponent = () => {
                   </g>
                 </g>
               </svg>
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={handleGoList}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className={`container mt-4 bg-secondary rounded p-5 text-center text-white ${
+                isHovered ? "bg-opacity-75" : "bg-opacity-50"
+              } `}
+            >
+              <h2>
+                {" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-card-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
+                  <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+                </svg>{" "}
+                List
+              </h2>
             </div>
           </div>
 
