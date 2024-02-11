@@ -1,6 +1,6 @@
 // authActions.js
 import axios from "axios";
-import { loginUser } from "./authSlice";
+import { loginUser } from "./slices/authSlice";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

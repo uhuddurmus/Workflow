@@ -138,8 +138,8 @@ const Login = () => {
                     x1="38.35"
                     id="dfc95779-92fe-41b2-a00f-dbdbc44e8283_comp-kxizlnl4"
                   >
-                    <stop stop-color="#0071ce" offset="0"></stop>
-                    <stop stop-color="#0a9cfc" offset="1"></stop>
+                    <stop stopColor="#0071ce" offset="0"></stop>
+                    <stop stopColor="#0a9cfc" offset="1"></stop>
                   </linearGradient>
                 </defs>
                 <g>

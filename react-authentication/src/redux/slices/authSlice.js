@@ -38,7 +38,7 @@ export const { loginUser, logoutUser } = authSlice.actions;
 // Select user directly from sessionStorage
 export const selectUser = () => {
   const storedUser = sessionStorage.getItem("user");
-  return storedUser ? JSON.parse(storedUser) : null;
+  return JSON.parse(storedUser);
 };
 
 // Select isAuthenticated directly from sessionStorage

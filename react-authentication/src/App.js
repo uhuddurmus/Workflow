@@ -9,10 +9,10 @@ import Login from "./components/Login";
 import UserComponent from "./components/UserComponent";
 import AdminComponent from "./components/AdminComponent";
 import { useSelector } from "react-redux";
-import { selectIsAuthenticated } from "./redux/authSlice";
-import { selectIsAdmin } from "./redux/authSlice";
+import { selectIsAuthenticated } from "./redux/slices/authSlice";
+import { selectIsAdmin } from "./redux/slices/authSlice";
 import List from "./components/List/List";
-
+import Cart from "./components/Cart/Cart";
 function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const admin = useSelector(selectIsAdmin);
@@ -27,6 +27,7 @@ function App() {
                 <Route path="/user" element={<UserComponent />} />
                 <Route path="/admin" element={<AdminComponent />} />
                 <Route path="/list" element={<List />} />
+                <Route path="/Cart" element={<Cart />} />
                 <Route path="*" element={<Navigate to="/user" />} />
               </Routes>
             </Router>
@@ -35,6 +36,7 @@ function App() {
               <Routes>
                 <Route path="/user" element={<UserComponent />} />
                 <Route path="/list" element={<List />} />
+                <Route path="/Cart" element={<Cart />} />
                 <Route path="*" element={<Navigate to="/user" />} />
               </Routes>
             </Router>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setList } from "../../redux/slices/listSlice";
-import response from "../../Data/MOCK_DATA.json";
 import FilterInput from "./FilterInput";
 import PriceRangeInput from "./PriceRangeInput";
 import SortBySelect from "./SortBySelect";
@@ -10,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { selectUser, logoutUser } from "../../redux/slices/authSlice";
 import { selectIsAdmin } from "../../redux/slices/authSlice";
 import AdminIcon from "../AdminIcon";
-const List = () => {
+const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const list = useSelector((state) => state.list.items);
+  const list = useSelector((state) => state.cart.items);
   const [sortType, setSortType] = useState("default"); // Default sorting
   const [filteredData, setFilteredData] = useState([...list]);
   const [filter, setFilter] = useState({
@@ -26,10 +24,6 @@ const List = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [paginatedData, setPaginatedData] = useState([]);
   const itemsPerPage = 6;
-  useEffect(() => {
-    const data = response;
-    dispatch(setList(data));
-  }, [dispatch]);
 
   useEffect(() => {
     // Filtreleme işlemleri
@@ -152,7 +146,7 @@ const List = () => {
         >
           <div className="col-md-12">
             <div className="bg-white rounded bg-opacity-50 p-3 mb-1 mt-1 text-center d-flex justify-content-between">
-              <h1>List Component</h1>
+              <h1>Cart Component</h1>
               <div>
                 <button
                   className={`btn btn-secondary m-1 ${(user.role = "admin"
@@ -312,4 +306,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default Cart;
