@@ -27,10 +27,6 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== itemIdToRemove);
       sessionStorage.setItem("cart", JSON.stringify(state.items));
     },
-    clearCartItem: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
-      sessionStorage.setItem("cart", JSON.stringify(state.items));
-    },
     clearCart: (state) => {
       state.items = [];
       sessionStorage.removeItem("cart");
